@@ -54,6 +54,17 @@ You can then execute your native executable with: `./target/code-with-quarkus-1.
 
 If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
 
+Then, if you didn’t delete the generated native executable, you can build the docker image with:
+
+```shell script
+docker build -f src/main/docker/Dockerfile.native-micro -t quarkus-quickstart/getting-started .
+```
+
+And finally, run it with:
+```shell script
+docker run -i --rm -p 8080:8080 quarkus-quickstart/getting-started
+```
+
 ## Related Guides
 
 - RESTEasy Classic ([guide](https://quarkus.io/guides/resteasy)): REST endpoint framework implementing Jakarta REST and more
