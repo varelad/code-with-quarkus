@@ -40,7 +40,8 @@ The application, packaged as an _über-jar_, is now runnable using `java -jar ta
 You can create a native executable using:
 
 ```shell script
-./mvnw package -Dnative
+cmd /c 'call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat" && mvn install -Dnative -DskipTests -Dquarkus.native.container-build=true'
+
 ```
 
 Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
