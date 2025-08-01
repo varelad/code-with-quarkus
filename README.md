@@ -40,7 +40,7 @@ The application, packaged as an _über-jar_, is now runnable using `java -jar ta
 You can create a native executable using:
 
 ```shell script
-cmd /c 'call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat" && mvn install -Dnative -DskipTests -Dquarkus.native.container-build=true'
+cmd /c 'call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat" && ./mvnw install -Dnative -DskipTests -Dquarkus.native.container-build=true'
 
 ```
 
@@ -57,13 +57,20 @@ If you want to learn more about building native executables, please consult <htt
 Then, if you didn’t delete the generated native executable, you can build the docker image with:
 
 ```shell script
-docker build -f src/main/docker/Dockerfile.native-micro -t quarkus-quickstart/getting-started .
+docker build -f src/main/docker/Dockerfile.native-micro -t quarkus\code-with-quarkus .
 ```
 
 And finally, run it with:
 ```shell script
-docker run -i --rm -p 8080:8080 quarkus-quickstart/getting-started
+docker run -i --rm -p 8080:8080 quarkus/code-with-quarkus
 ```
+```shell script
+docker push rashcarnales/code-with-quarkus
+```
+
+target/kubernetes/kubernetes.yaml
+
+cmd /c 'call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat" && .\mvnw.cmd verify -Dquarkus.kubernetes.deploy=true'
 
 ## Related Guides
 
